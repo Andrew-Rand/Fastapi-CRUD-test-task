@@ -1,10 +1,11 @@
 from fastapi import APIRouter, HTTPException
 
+from app.api.v1.articles.schemas import ArticleOut
 from app.core.articles.queries import create_article, get_article, get_articles, update_article, delete_article
-from app.core.articles.schemas import ArticleOut, ArticleCreate, ArticleUpdate
+from app.core.articles.schemas import ArticleCreate, ArticleUpdate
 from app.core.dependencies import DbSession
 
-router = APIRouter()
+router = APIRouter(prefix="/v1")
 
 @router.post("/articles", response_model=ArticleOut)
 async def create(data: ArticleCreate, dbsession: DbSession):

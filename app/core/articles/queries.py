@@ -1,6 +1,5 @@
 import sqlalchemy as sa
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import Session
 
 from app.core.articles.models import Article
 from app.core.articles.schemas import ArticleCreate, ArticleUpdate
