@@ -2,7 +2,7 @@ import os
 
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:postgres@db/articles_db")
 
 engine = create_async_engine(
     url=DATABASE_URL,
