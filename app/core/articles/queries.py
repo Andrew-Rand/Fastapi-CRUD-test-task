@@ -15,10 +15,10 @@ async def get_article(db: AsyncSession, article_id: int) -> Article | None:
     result = await db.scalars(stmt)
     return result.one_or_none()
 
-async def get_articles(db: AsyncSession) -> list[type[Article]]:
+async def get_articles(db: AsyncSession, offset: int = 0, limit: int = 100) -> list[type[Article]]:
     """Get all rows from the database matching the query."""
     stmt = (
-        sa.select(Article)
+        sa.select(Article).offset(offset).limit(limit)
     )
     result = await db.scalars(stmt)
     return result.all()

@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 
 from app.api.v2.articles.schemas import ArticleOutSimple
 from app.core.articles.queries import get_article, get_articles
-from app.core.dependencies import DbSession
+from app.core.dependencies import DbSession, Pagination
 
 router = APIRouter(prefix="/v2")
 
@@ -14,6 +14,5 @@ async def read(article_id: int, dbsession: DbSession):
     return article
 
 @router.get("/articles", response_model=list[ArticleOutSimple])
-async def read_all(dbsession: DbSession):
-    # TODO: add pagination
-    return await get_articles(dbsession)
+async def read_all(pagination: Pagination, dbsession: DbSession):
+    return await get_articles(dbsession, pagination.offset, pagination.limit)

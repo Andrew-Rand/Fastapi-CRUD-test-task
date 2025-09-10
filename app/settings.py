@@ -15,7 +15,8 @@ CLIENT_SETTINGS = {
         "version": "v2",
         "enabled_endpoints":
             {
-                '/articles': ["POST", "GET"],
+                '/articles': ["GET"],
+                '/articles/{id}': ["GET"],
             },
     },
     "client_c": {},
