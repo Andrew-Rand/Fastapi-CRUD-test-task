@@ -9,7 +9,6 @@ CLIENT_SETTINGS = {
                 '/articles': ["POST", "GET"],
                 '/articles/{id}': ["GET", "PATCH", "DELETE"],
             }
-            # "POST /articles", "GET /articles", "GET /articles/{id}", "PATCH /articles/{id}", "DELETE /articles/{id}"],
     },
     "client_b": {
         "version": "v2",

@@ -10,7 +10,6 @@ async def get_article(db: AsyncSession, article_id: int) -> Article | None:
     stmt = (
         sa.select(Article)
         .where(Article.id == article_id)
-        # .options(sa.orm.joinedload(Article.author)
     )
     result = await db.scalars(stmt)
     return result.one_or_none()

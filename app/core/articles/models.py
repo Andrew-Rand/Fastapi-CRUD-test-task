@@ -1,7 +1,5 @@
-import typing
-
 import sqlalchemy as sa
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column
 
 from app.common.db.base_columns import UUIDKeyType
 from app.common.db.base_models import Model

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
 from app.api.v1.articles.schemas import ArticleOut
-from app.core.articles.queries import create_article, get_article, get_articles, update_article, delete_article
+from app.core.articles.queries import create_article, get_article, get_articles, delete_article, update_article
 from app.core.articles.schemas import ArticleCreate, ArticleUpdate
 from app.core.dependencies import DbSession, Pagination
 

@@ -1,14 +1,6 @@
-import typing
-import uuid
+from sqlalchemy.orm import DeclarativeBase, Mapped
 
-from sqlalchemy import Column, Integer, String, Text, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-import datetime
-
-import sqlalchemy as sa
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-
-from app.common.db.base_columns import IntPk, AutoCreatedAt, AutoUpdatedAt
+from app.common.db.base_columns import AutoCreatedAt, AutoUpdatedAt, IntPk
 
 
 class Base(DeclarativeBase):
